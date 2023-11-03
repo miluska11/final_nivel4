@@ -31,7 +31,7 @@ class BitacorasController extends Controller
         $bitacoras->navegador = $request->navegador;
         $bitacoras->usuario = $request->usuario;
         $bitacoras->save();
-        return $bitacoras;
+        return response()->json(["message" =>"usuario creado"],200); 
     }
 
     /**
@@ -74,7 +74,8 @@ class BitacorasController extends Controller
         $bitacoras->navegador = $request->navegador;
         $bitacoras->usuario = $request->usuario;
         $bitacoras->save();
-        return $bitacoras;
+       
+        return response()->json(["message" =>"usuario actualizado"],200); 
     }
 
     /**
@@ -84,6 +85,6 @@ class BitacorasController extends Controller
     {
         $bitacoras = Bitacoras::find($id);
         $bitacoras->delete();
-        return $bitacoras; 
+        return response()->json(["message" =>"usuario eliminado"],200); 
     }
 }

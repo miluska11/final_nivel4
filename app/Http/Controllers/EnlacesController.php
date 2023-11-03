@@ -30,7 +30,7 @@ class EnlacesController extends Controller
         $enlaces->usuariocreacion = $request->usuariocreacion;
         $enlaces->usuariomodificacion = $request->usuariomodificacion;
         $enlaces->save();
-        return $enlaces;
+        return response()->json(["message" =>"usuario creado"],200); 
     }
 
     /**
@@ -72,7 +72,7 @@ class EnlacesController extends Controller
         $enlaces->usuariocreacion = $request->usuariocreacion;
         $enlaces->usuariomodificacion = $request->usuariomodificacion;
         $enlaces->save();
-        return $enlaces;
+        return response()->json(["message" =>"usuario actualizado"],200); 
     }
 
     /**
@@ -82,6 +82,6 @@ class EnlacesController extends Controller
     {
         $enlaces = Enlaces::find($id);
         $enlaces->delete();
-        return $enlaces; 
+        return response()->json(["message" =>"usuario eliminado"],200); 
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Roles;
+use GuzzleHttp\Psr7\Message;
 use Illuminate\Http\Request;
 
 class RolesController extends Controller
@@ -28,7 +29,7 @@ class RolesController extends Controller
         $roles->usuariocreacion = $request->usuariocreacion;
         $roles->usuariomodificacion = $request->usuariomodificacion;
         $roles->save();
-        return $roles;
+        return response()->json(["message" =>"usuario creado"],200); 
     }
 
     /**
@@ -68,7 +69,7 @@ class RolesController extends Controller
         $roles->usuariocreacion = $request->usuariocreacion;
         $roles->usuariomodificacion = $request->usuariomodificacion;
         $roles->save();
-        return $roles;
+        return response()->json(["message" =>"usuario actualizado"],200); 
     }
 
     /**
@@ -78,7 +79,7 @@ class RolesController extends Controller
     {
         $roles = Roles::find($id);
         $roles->delete();
-        return $roles; 
+        return response()->json(["message" =>"usuario eliminado"],200); 
 
     }
 }

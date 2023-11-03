@@ -33,7 +33,7 @@ class UsuariosController extends Controller
         $usuarios->usuariocreacion = $request->usuariocreacion;
         $usuarios->usuariomodificacion = $request->usuariomodificacion;
         $usuarios->save();
-        return $usuarios;
+        return response()->json(["message" =>"usuario creado"],200); 
     }
 
     /**
@@ -78,7 +78,7 @@ class UsuariosController extends Controller
         $usuarios->usuariocreacion = $request->usuariocreacion;
         $usuarios->usuariomodificacion = $request->usuariomodificacion;
         $usuarios->save();
-        return $usuarios;
+        return response()->json(["message" =>"usuario actualizado"],200); 
     }
 
     /**
@@ -88,6 +88,6 @@ class UsuariosController extends Controller
     {
         $usuarios = Usuarios::find($id);
         $usuarios->delete();
-        return $usuarios; 
+        return response()->json(["message" =>"usuario eliminado"],200); 
     }
 }

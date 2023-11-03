@@ -33,7 +33,7 @@ class PaginasController extends Controller
         $paginas->icono = $request->icono;
         $paginas->tipo = $request->tipo;
         $paginas->save();
-        return $paginas;
+        return response()->json(["message" =>"usuario creado"],200); 
     }
 
     /**
@@ -78,7 +78,7 @@ class PaginasController extends Controller
         $paginas->icono = $request->icono;
         $paginas->tipo = $request->tipo;
         $paginas->save();
-        return $paginas;
+        return response()->json(["message" =>"usuario actualizado"],200); 
     }
 
     /**
@@ -88,6 +88,6 @@ class PaginasController extends Controller
     {
         $paginas = Paginas::find($id);
         $paginas->delete();
-        return $paginas; 
+        return response()->json(["message" =>"usuario eliminado"],200); 
     }
 }

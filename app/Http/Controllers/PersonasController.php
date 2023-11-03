@@ -31,7 +31,7 @@ class PersonasController extends Controller
         $personas->usuariocreacion = $request->usuariocreacion;
         $personas->usuariomodificacion = $request->usuariomodificacion;
         $personas->save();
-        return $personas;
+        return response()->json(["message" =>"usuario creado"],200);
     }
 
     /**
@@ -74,7 +74,7 @@ class PersonasController extends Controller
         $personas->usuariocreacion = $request->usuariocreacion;
         $personas->usuariomodificacion = $request->usuariomodificacion;
         $personas->save();
-        return $personas;
+        return response()->json(["message" =>"usuario actualizado"],200); 
     }
 
     /**
@@ -84,7 +84,7 @@ class PersonasController extends Controller
     {
         $personas = Personas::find($id);
         $personas->delete();
-        return $personas; 
+        return response()->json(["message" =>"usuario eliminado"],200); 
 
     }
 }
