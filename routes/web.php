@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+use App\Http\Controllers\RolesController;
+
+
+
+Route::get('/roles/create', [RolesController::class, 'create'])->name('roles.create');
+Route::post('/roles', [RolesController::class, 'store'])->name('roles.store');

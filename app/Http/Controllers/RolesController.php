@@ -22,14 +22,7 @@ class RolesController extends Controller
      */
     public function create(Request $request)
     {
-        $roles = new Roles();
-        $roles->rol = $request->rol;
-        $roles->fechacreacion = $request->fechacreacion;
-        $roles->fechamodificacion = $request->fechamodificacion;
-        $roles->usuariocreacion = $request->usuariocreacion;
-        $roles->usuariomodificacion = $request->usuariomodificacion;
-        $roles->save();
-        return response()->json(["message" =>"usuario creado"],200); 
+        return view('roles.create_role');
     }
 
     /**
@@ -37,8 +30,23 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+            'rol' => 'required',
+            'fechacreacion' => 'required', // Agrega validaciones para otros campos
+            // ...
+        ]);
+
+        $role = new Roles(); // Cambio aquí
+        $role->rol = $request->rol;
+        $role->fechacreacion = $request->fechacreacion;
+        $role->fechamodificacion = $request->fechamodificacion;
+        $role->usuariocreacion = $request->usuariocreacion;
+        $role->usuariomodificacion = $request->usuariomodificacion;
+        $role->save();
+
+        return redirect()->route('roles.create')->with('success', 'Rol creado exitosamente');
     }
+
 
     /**
      * Display the specified resource.

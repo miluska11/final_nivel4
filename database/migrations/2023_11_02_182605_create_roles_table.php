@@ -11,16 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->id('idrol');
-            $table->string('rol');
-            $table->string('fechacreacion');
-            $table->string('fechamodificacion');
-            $table->string('usuariocreacion');
-            $table->string('usuariomodificacion');
-            $table->timestamps();
-        });
-    }
+
+    Schema::create('roles', function (Blueprint $table) {
+        $table->bigIncrements('idrol'); // Cambio aquí
+        $table->string('rol');
+        $table->timestamp('fechacreacion')->useCurrent();
+        $table->timestamp('fechamodificacion')->useCurrent();
+        $table->unsignedBigInteger('usuariocreacion');
+        $table->unsignedBigInteger('usuariomodificacion');
+        $table->timestamps();
+    });
+}
+
+    
+    
 
     /**
      * Reverse the migrations.
