@@ -6,10 +6,10 @@
         <input type="text" id="rol" name="rol"><br><br>
 
         <label for="fechacreacion">Fecha de Creación:</label>
-        <input type="text" id="fechacreacion" name="fechacreacion"><br><br>
+        <input type="date" id="fechacreacion" name="fechacreacion"><br><br>
 
         <label for="fechamodificacion">Fecha de Modificación:</label>
-        <input type="text" id="fechamodificacion" name="fechamodificacion"><br><br>
+        <input type="date" id="fechamodificacion" name="fechamodificacion"><br><br>
 
         <label for="usuariocreacion">Usuario de Creación:</label>
         <input type="text" id="usuariocreacion" name="usuariocreacion"><br><br>
