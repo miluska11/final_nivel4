@@ -9,7 +9,7 @@
     <form action="{{ route('roles.store') }}" method="POST" class="max-w-md mx-auto mt-6 p-6 bg-white rounded shadow-md">
     @csrf
     <div class="mb-4">
-        <label class="block text-red-900 text-sm font-bold mb-2" for="rol">Rol:</label>
+        <label class="block text-sm text-sm font-bold mb-2" for="rol">Rol:</label>
         <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="rol" type="text" name="rol">
     </div>
 
@@ -56,7 +56,7 @@ btnAlert.addEventListener("click", function(event) {
   // Verifica si algún campo está vacío
   if (rolValue === "" || fechacreacionValue === "" || fechamodificacionValue === "" || usuariocreacionValue === "" || usuariomodificacionValue === "") {
     alert("Por favor, completa todos los campos antes de guardar");
-    
+
   } else {
     // Si todos los campos están llenos, envía el formulario
     form.submit();
