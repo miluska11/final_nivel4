@@ -1,24 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
 <body>
     <!-- Tu formulario y otros contenidos van aquí -->
-    <form action="{{ route('roles.store') }}" method="POST">
-        @csrf
-        <label for="rol">Rol:</label>
-        <input type="text" id="rol" name="rol"><br><br>
+    <form action="{{ route('roles.store') }}" method="POST" class="max-w-md mx-auto mt-6 p-6 bg-white rounded shadow-md">
+    @csrf
+    <div class="mb-4">
+        <label class="block text-red-900 text-sm font-bold mb-2" for="rol">Rol:</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="rol" type="text" name="rol">
+    </div>
 
-        <label for="fechacreacion">Fecha de Creación:</label>
-        <input type="date" id="fechacreacion" name="fechacreacion"><br><br>
+    <div class="mb-4">
+        <label class="block text-sm font-bold mb-2" for="fechacreacion">Fecha de Creación:</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fechacreacion" type="date" name="fechacreacion">
+    </div>
 
-        <label for="fechamodificacion">Fecha de Modificación:</label>
-        <input type="date" id="fechamodificacion" name="fechamodificacion"><br><br>
+    <div class="mb-4">
+        <label class="block text-sm font-bold mb-2" for="fechamodificacion">Fecha de Modificación:</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fechamodificacion" type="date" name="fechamodificacion">
+    </div>
 
-        <label for="usuariocreacion">Usuario de Creación:</label>
-        <input type="text" id="usuariocreacion" name="usuariocreacion"><br><br>
+    <div class="mb-4">
+        <label class="block text-sm font-bold mb-2" for="usuariocreacion">Usuario de Creación:</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="usuariocreacion" type="text" name="usuariocreacion">
+    </div>
 
-        <label for="usuariomodificacion">Usuario de Modificación:</label>
-        <input type="text" id="usuariomodificacion" name="usuariomodificacion"><br><br>
+    <div class="mb-4">
+        <label class="block text-sm font-bold mb-2" for="usuariomodificacion">Usuario de Modificación:</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="usuariomodificacion" type="text" name="usuariomodificacion">
+    </div>
 
-        <button type="submit" id="btn">Guardar</button>
-    </form>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" id="btn">
+        Guardar
+    </button>
+</form>
+
     <!-- Otros elementos HTML o código PHP de la vista -->
     <script>
        const btnAlert = document.getElementById("btn");
@@ -37,6 +56,7 @@ btnAlert.addEventListener("click", function(event) {
   // Verifica si algún campo está vacío
   if (rolValue === "" || fechacreacionValue === "" || fechamodificacionValue === "" || usuariocreacionValue === "" || usuariomodificacionValue === "") {
     alert("Por favor, completa todos los campos antes de guardar");
+    
   } else {
     // Si todos los campos están llenos, envía el formulario
     form.submit();
