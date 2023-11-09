@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\RolesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,9 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-use App\Http\Controllers\RolesController;
 
 
+Route::get('/roles/create', function () {
+    return view('create_role');
+});
 
-Route::get('/roles/create', [RolesController::class, 'create'])->name('roles.create');
+
 Route::post('/roles', [RolesController::class, 'store'])->name('roles.store');
+
+
+// Route::get('/roles/create', [RolesController::class, 'create'])->name('roles.create');
+

@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use App\Models\Roles;
@@ -44,7 +45,10 @@ class RolesController extends Controller
         $role->usuariomodificacion = $request->usuariomodificacion;
         $role->save();
 
-        return redirect()->route('roles.create')->with('success', 'Rol creado exitosamente');
+        return redirect('/roles/create')->with('success', 'Rol creado exitosamente');
+        
+
+
     }
 
 
